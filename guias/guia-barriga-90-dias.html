@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Guía: Pierde la barriga en 90 días · José Unstoppable</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700;800;900&family=Hanken+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap">
+<style>
+:root{
+  --paper:#FFFFFF; --mist:#F3F6FB; --ink:#0A1630; --blue:#0B3A8F; --blue-deep:#06204F;
+  --blue-hi:#2D6BFF; --ice:#DCE6F7; --line:#E2E8F2; --text:#2B3A55; --muted:#5C6A84; --on-blue:#C9D6EE;
+  --f-display:'Schibsted Grotesk','Helvetica Neue',Arial,sans-serif;
+  --f-body:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif;
+  --f-serif:'Instrument Serif',Georgia,serif;
+}
+@page{size:A4;margin:0}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font:400 11.5pt/1.6 var(--f-body);color:var(--text);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+p,h1,h2,h3{margin:0}
+strong{color:var(--ink);font-weight:700}
+.page{width:210mm;height:297mm;position:relative;overflow:hidden;page-break-after:always;padding:20mm 18mm 22mm}
+.page:last-child{page-break-after:auto}
+
+.disp{font-family:var(--f-display);font-weight:800;color:var(--ink);letter-spacing:-.04em;line-height:1.02}
+.it{font-family:var(--f-serif);font-style:italic;font-weight:400;letter-spacing:-.01em;color:var(--blue)}
+.label{display:inline-flex;align-items:center;gap:8px;font:700 8.5pt/1 var(--f-display);letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.label::before{content:"";width:18px;height:1.5px;background:currentColor}
+h2.disp{font-size:30pt;margin:10px 0 12px}
+.lead{font-size:12.5pt;color:var(--muted);max-width:150mm}
+
+.logo{display:inline-flex;align-items:center;gap:9px;color:var(--ink)}
+.logo .mk{display:grid;place-items:center;width:28px;height:28px;border-radius:8px;background:var(--blue);color:#fff;font:900 15px/1 var(--f-display)}
+.logo .wm{font:800 14px/1 var(--f-display);letter-spacing:-.03em}
+.logo .wm i{font:italic 400 16px/1 var(--f-serif);color:var(--blue);margin-left:3px}
+
+.foot{position:absolute;left:18mm;right:18mm;bottom:10mm;display:flex;justify-content:space-between;font:600 8pt/1 var(--f-display);color:var(--muted);letter-spacing:.04em;border-top:1px solid var(--line);padding-top:8px}
+
+/* COVER */
+.cover{padding:0;background:var(--paper)}
+.cover .top{display:flex;justify-content:space-between;align-items:center;padding:14mm 18mm 0}
+.cover .tag{font:700 8.5pt/1 var(--f-display);letter-spacing:.14em;text-transform:uppercase;color:var(--blue);background:var(--ice);padding:7px 12px;border-radius:999px}
+.cover .photo{margin:10mm 18mm 0;height:128mm;border-radius:22px;overflow:hidden;position:relative;box-shadow:0 30px 60px -30px rgba(6,32,79,.45)}
+.cover .photo img{width:100%;height:100%;object-fit:cover;object-position:50% 22%}
+.cover .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,32,79,0) 55%,rgba(6,32,79,.75) 100%)}
+.cover .badge{position:absolute;left:18px;bottom:16px;z-index:2;color:#fff;font:700 10pt/1.3 var(--f-display)}
+.cover .badge small{display:block;font:500 8.5pt/1.3 var(--f-body);color:var(--on-blue)}
+.cover .body{padding:11mm 18mm 0}
+.cover h1{font-size:40pt;line-height:.98;letter-spacing:-.045em}
+.cover h1 .it{font-size:44pt}
+.cover .sub{margin-top:12px;font-size:13pt;color:var(--muted);max-width:155mm}
+.cover .band{position:absolute;left:0;right:0;bottom:0;height:16mm;background:var(--blue-deep);display:flex;align-items:center;justify-content:space-between;padding:0 18mm;color:var(--on-blue);font:600 9pt/1 var(--f-display);letter-spacing:.06em}
+.cover .band b{color:#fff}
+
+/* ERRORS */
+.errs{display:flex;flex-direction:column;gap:11px;margin-top:20px}
+.err{display:grid;grid-template-columns:42px 1fr;gap:14px;padding:15px 18px;border:1px solid var(--line);border-radius:14px;background:#fff}
+.err .n{font:800 20pt/1 var(--f-display);color:var(--blue);letter-spacing:-.04em}
+.err h3{font:700 12.5pt/1.25 var(--f-display);color:var(--ink);letter-spacing:-.015em;margin-bottom:3px}
+.err p{font-size:11pt;line-height:1.5}
+.err .why{color:var(--blue);font-weight:600}
+
+/* PILLARS */
+.mistbg{background:var(--mist)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.pil{background:#fff;border-radius:14px;padding:18px 18px;border:1px solid var(--line)}
+.pil .ic{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:9px;background:var(--ice);color:var(--blue);font:800 11pt/1 var(--f-display);margin-bottom:8px}
+.pil h3{font:700 12pt/1.25 var(--f-display);color:var(--ink);letter-spacing:-.015em;margin-bottom:4px}
+.pil p{font-size:10.8pt;line-height:1.5}
+.note{margin-top:14px;padding:13px 16px;border-left:3px solid var(--blue);background:#fff;border-radius:0 12px 12px 0;font-size:10.5pt}
+
+/* PHASES */
+.phases{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.ph{border-radius:14px;padding:15px;background:var(--mist);border:1px solid var(--line)}
+.ph .w{font:700 8pt/1 var(--f-display);letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+.ph h3{font:800 14pt/1.1 var(--f-display);color:var(--ink);letter-spacing:-.03em;margin:7px 0 6px}
+.ph p{font-size:10.3pt;line-height:1.5}
+.ph.dark{background:var(--blue);border-color:var(--blue)}
+.ph.dark .w{color:#9DBBFF}.ph.dark h3{color:#fff}.ph.dark p{color:var(--on-blue)}
+
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:14px;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+.vs .col{padding:18px 18px}
+.vs .col h3{font:800 11.5pt/1 var(--f-display);letter-spacing:-.02em;margin-bottom:9px}
+.vs .a{background:#fff}.vs .a h3{color:var(--muted)}
+.vs .b{background:var(--blue-deep);color:var(--on-blue)}.vs .b h3{color:#fff}
+.vs ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;font-size:10.6pt;line-height:1.4}
+.vs li{display:flex;gap:8px}
+.vs .a li::before{content:"✕";color:#B4BFD2;font-weight:700}
+.vs .b li::before{content:"✓";color:#9DBBFF;font-weight:700}
+
+/* CTA */
+.cta{background:var(--blue-deep);color:var(--on-blue);padding:22mm 18mm}
+.cta .logo{color:#fff}.cta .logo .wm i{color:#9DBBFF}.cta .logo .mk{background:#fff;color:var(--blue-deep)}
+.cta .label{color:#9DBBFF;margin-top:22mm;display:flex}
+.cta h2{color:#fff;font-size:38pt;line-height:1;margin:12px 0 16px}
+.cta h2 .it{color:#9DBBFF}
+.cta p{font-size:12.5pt;max-width:150mm}
+.cta ul{list-style:none;padding:0;margin:16px 0 0;display:flex;flex-direction:column;gap:9px;font-size:11.5pt}
+.cta li{display:flex;gap:10px;align-items:flex-start}
+.cta li::before{content:"✓";flex:none;display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:rgba(157,187,255,.18);color:#9DBBFF;font:800 10px/1 var(--f-display);margin-top:2px}
+.cta li b{color:#fff}
+.word{margin-top:16mm;background:#fff;border-radius:22px;padding:18px 22px;display:flex;align-items:center;gap:20px;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.word .bubble{font:900 30pt/1 var(--f-display);color:#fff;background:var(--blue);padding:14px 22px;border-radius:16px 16px 4px 16px;letter-spacing:-.02em}
+.word p{color:var(--text);font-size:11.5pt;max-width:none}
+.word p b{color:var(--ink)}
+.guar{margin-top:12px;font-size:10.5pt;color:var(--on-blue)}
+.guar b{color:#fff}
+.sig{position:absolute;left:18mm;right:18mm;bottom:16mm;display:flex;align-items:center;gap:14px;border-top:1px solid rgba(201,214,238,.2);padding-top:14px}
+.sig img{width:48px;height:48px;border-radius:50%;object-fit:cover;object-position:50% 25%}
+.sig .t{font:700 11pt/1.3 var(--f-display);color:#fff}
+.sig .t small{display:block;font:500 9pt/1.3 var(--f-body);color:var(--on-blue)}
+</style>
+</head>
+<body>
+
+<!-- 1 · PORTADA -->
+<section class="page cover">
+  <div class="top">
+    <span class="logo"><span class="mk">J</span><span class="wm">José<i>Unstoppable</i></span></span>
+    <span class="tag">Guía gratuita</span>
+  </div>
+  <div class="photo">
+    <img src="../public/images/jose-hero.jpg" alt="José Unstoppable">
+    <div class="badge">José Unstoppable<small>Entrenador personal · Transformación física</small></div>
+  </div>
+  <div class="body">
+    <span class="label">Guía 90 días</span>
+    <h1 class="disp" style="margin-top:12px">Por qué no pierdes<br>la barriga <span class="it">y qué hacer</span><br>de verdad.</h1>
+    <p class="sub">Los errores que te mantienen en el mismo punto, lo que sí funciona y cómo sería tu plan para los próximos 90 días.</p>
+  </div>
+  <div class="band"><span>JOSÉ UNSTOPPABLE</span><span>Lectura de <b>5 minutos</b></span></div>
+</section>
+
+<!-- 2 · ERRORES -->
+<section class="page">
+  <span class="label">La verdad incómoda</span>
+  <h2 class="disp">No es falta de ganas.<br>Es que te han <span class="it">contado mal</span> cómo funciona.</h2>
+  <p class="lead">Si llevas tiempo intentándolo y la barriga sigue ahí, casi seguro estás cayendo en uno (o varios) de estos 5 errores.</p>
+
+  <div class="errs">
+    <div class="err"><span class="n">01</span><div>
+      <h3>Hacer cientos de abdominales</h3>
+      <p>La grasa no se quema “por zonas”. Los abdominales fortalecen el músculo, pero la grasa que lo cubre solo baja cuando bajas grasa en todo el cuerpo. <span class="why">Puedes tener el abdomen más fuerte del mundo… escondido.</span></p>
+    </div></div>
+    <div class="err"><span class="n">02</span><div>
+      <h3>Comer muy poco o hacer dietas extremas</h3>
+      <p>Funcionan dos semanas. Luego llega el hambre, el cansancio y el atracón del fin de semana, y vuelves al punto de partida. Además pierdes músculo, que es justo lo que te ayuda a quemar más. <span class="why">Lo extremo no se sostiene.</span></p>
+    </div></div>
+    <div class="err"><span class="n">03</span><div>
+      <h3>Solo hacer cardio</h3>
+      <p>Horas de cinta o elíptica sin entrenar fuerza. Bajas algo de peso, pero el cuerpo se queda “blando” y sin forma. <span class="why">La fuerza es lo que cambia cómo se ve tu cuerpo.</span></p>
+    </div></div>
+    <div class="err"><span class="n">04</span><div>
+      <h3>Olvidarte de la proteína, el sueño y el estrés</h3>
+      <p>Poca proteína = más hambre y menos músculo. Dormir mal y vivir estresada dispara el apetito y hace que cueste mucho más perder grasa abdominal. <span class="why">Lo que pasa fuera del gimnasio cuenta tanto como el entreno.</span></p>
+    </div></div>
+    <div class="err"><span class="n">05</span><div>
+      <h3>El “todo o nada” y no medir nada</h3>
+      <p>Lunes perfecto, jueves abandonas. Y como solo miras la báscula, cuando no baja crees que no funciona y lo dejas. <span class="why">Sin un plan y sin seguimiento, siempre vuelves a empezar.</span></p>
+    </div></div>
+  </div>
+  <div class="foot"><span>JOSÉ UNSTOPPABLE · GUÍA 90 DÍAS</span><span>02</span></div>
+</section>
+
+<!-- 3 · LO QUE FUNCIONA -->
+<section class="page mistbg">
+  <span class="label">Lo que sí funciona</span>
+  <h2 class="disp">Los 6 pilares para<br>perder la barriga <span class="it">para siempre</span>.</h2>
+  <p class="lead">No hay truco ni producto milagro. Hay unos pilares que, aplicados juntos y con constancia, funcionan en todas las personas.</p>
+
+  <div class="grid">
+    <div class="pil"><span class="ic">1</span><h3>Déficit calórico moderado</h3><p>Comer un poco menos de lo que gastas, sin pasar hambre. Lo justo para perder grasa semana a semana sin que tu cuerpo “se defienda”.</p></div>
+    <div class="pil"><span class="ic">2</span><h3>Fuerza 3 veces por semana</h3><p>Entrenamientos cortos y bien hechos. Mantienes y ganas músculo, y el cuerpo cambia de forma, no solo de peso.</p></div>
+    <div class="pil"><span class="ic">3</span><h3>Proteína en cada comida</h3><p>Te sacia, protege tu músculo y hace que mantener el déficit sea mucho más fácil.</p></div>
+    <div class="pil"><span class="ic">4</span><h3>Moverte cada día</h3><p>Caminar 8.000–10.000 pasos diarios quema más que muchas sesiones de cardio, y es fácil de mantener.</p></div>
+    <div class="pil"><span class="ic">5</span><h3>Dormir y gestionar el estrés</h3><p>7–8 horas de sueño. Menos estrés = menos ansiedad por la comida y mejor recuperación.</p></div>
+    <div class="pil"><span class="ic">6</span><h3>Medir y ajustar</h3><p>Cintura, fotos y energía, no solo la báscula. Y ajustar el plan cada semana según cómo responde tu cuerpo.</p></div>
+  </div>
+
+  <div class="note"><strong>La clave no es saber esto. Es aplicarlo todo a la vez, adaptado a ti, durante semanas.</strong> Ahí es donde casi todo el mundo falla.</div>
+  <div class="foot"><span>JOSÉ UNSTOPPABLE · GUÍA 90 DÍAS</span><span>03</span></div>
+</section>
+
+<!-- 4 · 90 DÍAS + POR QUÉ SOLA NO -->
+<section class="page">
+  <span class="label">Tu hoja de ruta</span>
+  <h2 class="disp">Así se ven <span class="it">90 días</span><br>bien hechos.</h2>
+  <p class="lead">90 días es el tiempo perfecto: suficiente para ver un cambio real en el espejo y para que los nuevos hábitos se queden contigo.</p>
+
+  <div class="phases">
+    <div class="ph"><span class="w">Días 1–30</span><h3>Base</h3><p>Plan de alimentación adaptado a ti, técnica de los ejercicios y los primeros hábitos. Pierdes hinchazón y notas más energía.</p></div>
+    <div class="ph"><span class="w">Días 31–60</span><h3>Aceleración</h3><p>Más intensidad y ajustes según tu progreso. La cintura empieza a bajar y la ropa te queda distinta.</p></div>
+    <div class="ph dark"><span class="w">Días 61–90</span><h3>Transformación</h3><p>Afinamos los detalles, se nota en las fotos y aprendes a mantenerlo sin depender de nadie.</p></div>
+  </div>
+
+  <h2 class="disp" style="font-size:24pt;margin-top:24px">¿Por qué sola es <span class="it">tan difícil</span>?</h2>
+  <p class="lead" style="font-size:11.5pt">Información tienes de sobra. Lo que falta es un plan hecho para ti, alguien que lo ajuste cuando te estancas y alguien a quien rendir cuentas cuando falla la motivación.</p>
+
+  <div class="vs">
+    <div class="col a"><h3>Por tu cuenta</h3><ul>
+      <li>Planes genéricos de internet</li>
+      <li>Te estancas y no sabes qué cambiar</li>
+      <li>Si un día fallas, lo dejas</li>
+      <li>Nadie revisa lo que haces</li>
+      <li>Empiezas de cero cada pocos meses</li>
+    </ul></div>
+    <div class="col b"><h3>Conmigo</h3><ul>
+      <li>Plan de entreno y alimentación a tu medida</li>
+      <li>Ajustes semanales según tu progreso</li>
+      <li>Seguimiento y apoyo cuando te cuesta</li>
+      <li>Alguien que te mantiene en el camino</li>
+      <li>Resultados que se quedan contigo</li>
+    </ul></div>
+  </div>
+  <div class="foot"><span>JOSÉ UNSTOPPABLE · GUÍA 90 DÍAS</span><span>04</span></div>
+</section>
+
+<!-- 5 · CTA -->
+<section class="page cta">
+  <span class="logo"><span class="mk">J</span><span class="wm">José<i>Unstoppable</i></span></span>
+  <span class="label">Siguiente paso</span>
+  <h2 class="disp">¿Quieres que lo hagamos <span class="it">juntos</span>?</h2>
+  <p>Si estás cansada de intentarlo sola y quieres por fin ver resultados, te cuento cómo sería tu plan de 90 días conmigo:</p>
+  <ul>
+    <li><span><b>Entreno y alimentación 100% personalizados</b> a tu cuerpo, horarios y gustos.</span></li>
+    <li><span><b>Seguimiento semanal</b> y ajustes para que nunca te estanques.</span></li>
+    <li><span><b>Contacto directo conmigo</b> para resolver dudas y mantenerte constante.</span></li>
+    <li><span><b>Garantía por contrato:</b> si cumples el plan y no consigues el resultado, te devuelvo el dinero.</span></li>
+  </ul>
+
+  <div class="word">
+    <span class="bubble">QUIERO</span>
+    <p><b>Respóndeme con la palabra “QUIERO”</b> y te explico cómo funciona y cómo sería tu plan de 90 días. Las plazas son limitadas.</p>
+  </div>
+
+  <div class="sig">
+    <img src="../public/images/jose-hero.jpg" alt="">
+    <div class="t">José Unstoppable<small>Entrenador personal · Programa de transformación 90 días</small></div>
+  </div>
+</section>
+
+</body>
+</html>
