@@ -6,7 +6,7 @@ import MobileBar from '@/components/site/MobileBar'
 import VideoFrame from '@/components/site/VideoFrame'
 import { T } from '@/components/site/bits'
 import { INSIDE_SHOTS, INSIDE_VIDEO, INTRO_VIDEO, JOSE_BEFORE_AFTER, PHOTO_TESTIMONIALS, TECHNIQUE_VIDEOS, VIDEO_TESTIMONIALS } from '@/lib/home-content'
-import { LINKS, OWNER, PRICE, WA_HELLO, waLink } from '@/lib/site'
+import { LINKS, OWNER, PRICE, WA_BOOK, WHATSAPP, waLink } from '@/lib/site'
 import hero from '@/public/images/jose.jpg'
 import back from '@/public/images/onboarding-close.jpg'
 import './home.css'
@@ -35,23 +35,34 @@ function Ck() {
   )
 }
 
-function Arr() {
+function WaIcon() {
   return (
-    <span className="arr">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" /></svg>
+    <span className="arr" aria-hidden="true">
+      <svg width="20" height="20" viewBox="0 0 32 32"><path fill="currentColor" d="M16.04 3C8.86 3 3.03 8.82 3.03 15.99c0 2.29.6 4.53 1.74 6.5L3 29l6.68-1.75a12.97 12.97 0 0 0 6.36 1.63h.01c7.17 0 13-5.83 13-13S23.21 3 16.04 3Zm5.93 15.59c-.33-.16-1.93-.95-2.23-1.06-.3-.11-.52-.16-.73.17-.22.32-.84 1.05-1.03 1.27-.19.22-.38.24-.7.08-.33-.16-1.38-.51-2.62-1.62-.97-.86-1.62-1.93-1.81-2.25-.19-.33-.02-.5.14-.66.15-.15.33-.38.49-.57.16-.19.22-.32.33-.54.11-.22.05-.41-.03-.57-.08-.16-.73-1.76-1-2.41-.26-.63-.53-.55-.73-.56h-.62c-.22 0-.57.08-.87.41-.3.32-1.14 1.11-1.14 2.71s1.17 3.15 1.33 3.36c.16.22 2.3 3.5 5.56 4.91.78.34 1.39.54 1.86.69.78.25 1.49.21 2.05.13.63-.09 1.93-.79 2.2-1.55.27-.76.27-1.42.19-1.55-.08-.14-.3-.22-.62-.38Z" /></svg>
     </span>
   )
 }
 
-function BookButton({ es = 'Reserva tu llamada gratuita', en = 'Book your free call' }: { es?: string; en?: string }) {
-  return <Link className="btn btn-y" href={LINKS.book}><T es={es} en={en} /><Arr /></Link>
+// The main call to action: a WhatsApp chat with Jose to book the free call,
+// one link per language so the pre-filled message matches the page.
+function WaButton({ es = 'Escríbeme por WhatsApp', en = 'Message me on WhatsApp' }: { es?: string; en?: string }) {
+  return (
+    <>
+      <a data-es="" className="btn btn-wa" href={waLink(WA_BOOK.es)} target="_blank" rel="noopener">{es}<WaIcon /></a>
+      <a data-en="" className="btn btn-wa" href={waLink(WA_BOOK.en)} target="_blank" rel="noopener">{en}<WaIcon /></a>
+    </>
+  )
 }
 
+function BookLink() {
+  return <Link className="h-booklink" href={LINKS.book}><T es="o reserva tu llamada directamente" en="or book your call directly" /></Link>
+}
+
+const WA_DISPLAY = '+' + WHATSAPP.replace(/^(\d{2})(\d{3})(\d{2})(\d{2})(\d{2})$/, '$1 $2 $3 $4 $5')
+
 const FAQ: [string, string, string, string][] = [
-  ['No tengo tiempo. ¿Esto es para mí?', "I don't have time. Is this for me?", 'Sí. Son unas 3 horas de entreno a la semana, organizadas alrededor de tu trabajo y tu familia.', "Yes. About 3 hours of training a week, organised around your work and your family."],
   ['Siempre abandono. ¿Por qué ahora sería distinto?', 'I always quit. Why would this time be different?', 'Porque no lo haces solo: tienes un plan claro, WhatsApp diario conmigo y un check-in cada semana.', "Because you're not doing it alone: a clear plan, daily WhatsApp with me and a check-in every week."],
   ['¿Voy a pasar hambre o dejar de salir?', 'Will I go hungry or have to stop going out?', 'No. Aprendes a comer con una estructura sencilla que encaja con tu vida social.', 'No. You learn a simple way of eating that fits your social life.'],
-  ['Nunca he entrenado fuerza. ¿Puedo hacerlo?', "I've never done strength training. Can I do this?", 'Sí. Empezamos desde tu nivel y en la app tienes cada ejercicio explicado paso a paso.', 'Yes. We start from your level and the app explains every exercise step by step.'],
   ['¿Qué pasa en la llamada gratuita?', 'What happens on the free call?', 'Son 30 minutos. Me cuentas tu situación y te digo con sinceridad si te puedo ayudar. Sin compromiso.', "It's 30 minutes. You tell me where you are and I tell you honestly whether I can help. No commitment."],
 ]
 
@@ -75,20 +86,11 @@ export default function Home() {
             </h1>
             <p className="lead"><T es="Sin dietas imposibles ni vivir en el gimnasio. Con un plan hecho para ti y yo a tu lado cada día." en="No impossible diets, no living at the gym. A plan built for you and me by your side every day." /></p>
             <div className="h-ctas">
-              <BookButton />
+              <WaButton />
+              <BookLink />
               <FreeCallsNote />
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* 2 · Quick proof */}
-      <section className="h-stats" aria-label="Datos">
-        <div className="wrap">
-          <div className="h-stat"><b>+100</b><T es="personas acompañadas" en="people coached" /></div>
-          <div className="h-stat"><b>3<em>h</em></b><T es="de entreno a la semana" en="of training a week" /></div>
-          <div className="h-stat"><b>1:1</b><T es="WhatsApp diario conmigo" en="daily WhatsApp with me" /></div>
-          <div className="h-stat"><b>100<em>%</em></b><T es="garantía de resultados" en="results guarantee" /></div>
         </div>
       </section>
 
@@ -143,7 +145,7 @@ export default function Home() {
                 ))}
               </div>
             )}
-            <div className="h-after-cta"><BookButton es="Quiero ser el siguiente" en="I want to be next" /></div>
+            <div className="h-after-cta"><WaButton es="Quiero ser el siguiente" en="I want to be next" /></div>
           </div>
         </section>
       )}
@@ -251,8 +253,8 @@ export default function Home() {
               <li><Ck /><T es="WhatsApp diario y check-in semanal conmigo" en="Daily WhatsApp and weekly check-in with me" /></li>
               <li><Ck /><strong><T es="Garantía de devolución del 100%" en="100% money-back guarantee" /></strong></li>
             </ul>
-            <BookButton es="Reservar mi llamada gratuita" en="Book my free call" />
-            <p className="micro"><T es="Primero hablamos 30 minutos y vemos si encajamos." en="First we talk for 30 minutes and see if we're a fit." /></p>
+            <WaButton es="Escríbeme y agendamos tu llamada" en="Message me to book your call" />
+            <p className="micro"><T es="Primero hablamos por WhatsApp y te agendo una llamada gratuita de 30 minutos." en="We chat on WhatsApp first and I book you a free 30-minute call." /></p>
           </div>
         </div>
       </section>
@@ -271,23 +273,23 @@ export default function Home() {
                 <p><T es={aEs} en={aEn} /></p>
               </details>
             ))}
-            <p className="h-faq-more"><T es={<>¿Otra duda? <a href={waLink(WA_HELLO.es)} target="_blank" rel="noopener">Escríbeme por WhatsApp</a>.</>} en={<>Another question? <a href={waLink(WA_HELLO.en)} target="_blank" rel="noopener">Message me on WhatsApp</a>.</>} /></p>
           </div>
         </div>
       </section>
 
-      {/* 10 · Close */}
-      <section className="sec final">
+      {/* Close: talk to Jose on WhatsApp before booking */}
+      <section id="whatsapp" className="sec final">
         <div className="wrap">
-          <span className="eyebrow"><T es="La decisión es tuya" en="Your call" /></span>
-          <h2 className="disp"><T es={<>Dentro de 90 días puedes seguir igual. <span className="hl">O sin barriga.</span></>} en={<>In 90 days you can still be the same. <span className="hl">Or belly-free.</span></>} /></h2>
-          <BookButton es="Reservar mi llamada gratuita" en="Book my free call" />
-          <p className="micro"><T es="30 minutos · Gratis · Sin compromiso" en="30 minutes · Free · No commitment" /></p>
+          <span className="eyebrow"><T es="Hablemos" en="Let's talk" /></span>
+          <h2 className="disp"><T es={<>Escríbeme y <span className="hl">agendamos tu llamada.</span></>} en={<>Message me and <span className="hl">we&apos;ll book your call.</span></>} /></h2>
+          <p className="lead"><T es="Cuéntame en un mensaje dónde estás y qué quieres conseguir. Te respondo yo mismo y te doy día y hora para una llamada gratuita de 30 minutos." en="Tell me in a message where you are and what you want. I reply myself and give you a day and time for a free 30-minute call." /></p>
+          <WaButton />
+          <p className="h-wa-number"><T es="WhatsApp" en="WhatsApp" /> · {WA_DISPLAY}</p>
           <FreeCallsNote className="on-dark" />
         </div>
       </section>
 
-      <MobileBar href={LINKS.book}><T es="Reservar llamada gratuita" en="Book a free call" /></MobileBar>
+      <MobileBar href={waLink(WA_BOOK.es)} hrefEn={waLink(WA_BOOK.en)} className="btn btn-wa"><T es="Escríbeme por WhatsApp" en="Message me on WhatsApp" /></MobileBar>
     </div>
   )
 }

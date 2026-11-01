@@ -33,6 +33,12 @@ export function waLink(text?: string, phone: string = WHATSAPP) {
   return 'https://wa.me/' + phone.replace(/\D/g, '') + '?text=' + encodeURIComponent(msg)
 }
 
+// Sent when someone taps "Escríbeme por WhatsApp" on the home page to book.
+export const WA_BOOK = {
+  es: 'Hola Jose, quiero agendar mi llamada gratuita',
+  en: 'Hi Jose, I want to book my free call',
+}
+
 export const WA_HELLO = {
   es: 'Hola Jose, quiero saber más sobre el programa',
   en: 'Hi Jose, I want to know more about the program',

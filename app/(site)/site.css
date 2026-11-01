@@ -434,3 +434,10 @@ h3{font-family:var(--f-display);letter-spacing:-.02em}
 .free-calls.on-dark{color:#fff}
 @keyframes fc-pulse{70%,100%{box-shadow:0 0 0 9px rgba(31,175,90,0)}}
 @media (prefers-reduced-motion:reduce){.free-calls .dot{animation:none}}
+
+/* WhatsApp call to action */
+.btn-wa{background:#25D366;color:#06301A;box-shadow:0 16px 34px -16px rgba(18,140,70,.7)}
+.btn-wa:hover{background:#1FBE5A;color:#06301A;transform:translateY(-2px)}
+.btn-wa .arr{background:#fff;color:#1FAF5A}
+.btn-wa:hover .arr{transform:none}
+.m-bar .btn-wa{box-shadow:none}

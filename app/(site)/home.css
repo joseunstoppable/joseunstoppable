@@ -21,6 +21,13 @@
 .h-hero h1.disp{font-size:clamp(38px,5.6vw,76px);line-height:1.02;max-width:19ch}
 .h-hero .lead{margin-inline:auto}
 .h-ctas{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:6px}
+.h-booklink{font:600 15px var(--f-display);color:var(--muted);text-underline-offset:4px}
+.h-booklink:hover{color:var(--blue)}
+.h-wa-number{margin:0;font:600 15px var(--f-display);letter-spacing:.02em;color:var(--on-blue);font-variant-numeric:tabular-nums}
+.final .lead{color:var(--on-blue);margin-inline:auto;text-align:center}
+.final .btn-wa,.final .btn-wa:hover{color:#06301A}
+/* the page's own WhatsApp buttons replace the floating bubble here */
+body:has(.home) .wa-fab{display:none}
 
 /* stats */
 .h-stats{background:radial-gradient(800px 300px at 15% 0%,rgba(45,107,255,.35),transparent 70%),linear-gradient(120deg,var(--blue-deep),var(--blue));color:var(--on-blue)}
@@ -154,7 +161,7 @@
 }
 @media (max-width:640px){
   .h-photo{width:min(80%,340px)}
-  .h-ctas,.h-ctas .btn{width:100%}
+  .h-ctas,.h-ctas .btn,.final .btn{width:100%}
   .h-pill{font-size:11px;letter-spacing:.09em;padding:8px 14px}
   .h-tvideos>*{flex:0 1 calc(50% - 10px)}
   .h-about-facts li{padding:14px}
