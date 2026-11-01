@@ -14,8 +14,8 @@ export const metadata: Metadata = { title: 'Jose Unstoppable · Enlaces', robots
 const DEFAULT_LINKS = [
   { id: 'reserva', label: 'Reserva tu llamada gratuita', href: '/reserva?ref=bio', highlight: true },
   ...(INTRO_VIDEO ? [{ id: 'empieza', label: 'Empieza aquí: quién soy', href: '/?ref=bio#empieza', highlight: false }] : []),
-  { id: 'story', label: 'Conoce mi historia', href: '/?ref=bio#story', highlight: false },
-  { id: 'method', label: 'El método', href: '/?ref=bio#method', highlight: false },
+  { id: 'sobre-mi', label: 'Sobre mí', href: '/?ref=bio#sobre-mi', highlight: false },
+  { id: 'method', label: 'Cómo funciona', href: '/?ref=bio#method', highlight: false },
   { id: 'masterclass', label: 'Masterclass gratuita', href: '/masterclass?ref=bio', highlight: false },
   { id: 'home', label: 'Mi web', href: '/?ref=bio', highlight: false },
 ]

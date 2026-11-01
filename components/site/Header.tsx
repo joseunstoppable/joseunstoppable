@@ -6,15 +6,14 @@ import LangToggle from './LangToggle'
 import { INTRO_VIDEO, PHOTO_TESTIMONIALS, VIDEO_TESTIMONIALS } from '@/lib/home-content'
 import { LINKS } from '@/lib/site'
 
-// Links follow what the home page is showing: the video block and the
-// testimonials only appear once they have content.
-const hasTestimonials = VIDEO_TESTIMONIALS.some(t => t.video) || PHOTO_TESTIMONIALS.some(t => t.before && t.after)
+// Links follow what the home page is showing: the intro video and the
+// results only appear once they have content.
+const hasResults = VIDEO_TESTIMONIALS.some(t => t.video) || PHOTO_TESTIMONIALS.some(t => t.before && t.after)
 const NAV = [
-  INTRO_VIDEO
-    ? { href: '/#empieza', es: 'Empieza aquí', en: 'Start here' }
-    : { href: '/#story', es: 'Mi historia', en: 'My story' },
-  { href: '/#method', es: 'El método', en: 'The method' },
-  ...(hasTestimonials ? [{ href: '/#testimonios', es: 'Testimonios', en: 'Testimonials' }] : []),
+  ...(INTRO_VIDEO ? [{ href: '/#empieza', es: 'Empieza aquí', en: 'Start here' }] : []),
+  ...(hasResults ? [{ href: '/#resultados', es: 'Resultados', en: 'Results' }] : []),
+  { href: '/#sobre-mi', es: 'Sobre mí', en: 'About me' },
+  { href: '/#method', es: 'Cómo funciona', en: 'How it works' },
   { href: '/#offer', es: 'Precio', en: 'Pricing' },
   { href: '/#faq', es: 'Preguntas', en: 'FAQ' },
 ]
