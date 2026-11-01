@@ -12,6 +12,8 @@ const nextConfig: NextConfig = {
       { source: '/reserva.html', destination: '/reserva', permanent: true },
       { source: '/masterclass.html', destination: '/masterclass', permanent: true },
       { source: '/onboarding.html', destination: '/onboarding', permanent: true },
+      // Short link for the free belly-fat guide shared on Instagram/TikTok.
+      { source: '/guia', destination: '/guia-barriga-90-dias.pdf', permanent: false },
     ]
   },
 }
