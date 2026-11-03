@@ -26,11 +26,12 @@ type NavItem = {
 }
 type NavGroup = { id: string; title: string; items: NavItem[] }
 
-// Inicio on its own, then sections in the order a client moves through the
-// business: get leads, get paid, train them, grow. Things set up once
-// (offers, exercise library, templates, nutrition, app look, access) live
-// together under Ajustes so the daily menu stays short. Sections start
-// closed; the one holding the current page opens by itself.
+// The site is a sales funnel that books calls (3 Nov 2026, Nevin): Jose runs
+// payments, coaching and his clients in a separate app. So the menu only holds
+// the pipeline, the booked calls and what brings people in. The coaching,
+// proposal, invoice and onboarding pages still exist in the code but are left
+// out of the menu. Sections start closed; the one holding the current page
+// opens by itself.
 const NAV_GROUPS: NavGroup[] = [
   {
     id: 'home',
@@ -41,34 +42,16 @@ const NAV_GROUPS: NavGroup[] = [
   },
   {
     id: 'clients',
-    title: '1 · Captar',
+    title: '1 · Llamadas',
     items: [
-      { href: '/admin/deals',    icon: 'leads', label: 'Leads' },
-      { href: '/admin/bookings', icon: 'bookings', label: 'Llamadas' },
+      { href: '/admin/deals',    icon: 'leads', label: 'Pipeline' },
+      { href: '/admin/bookings', icon: 'bookings', label: 'Llamadas reservadas' },
       { href: '/admin/contacts', icon: 'contacts', label: 'Contactos', badgeKey: 'contacts', badgeBg: 'rgba(14,113,172,.14)', badgeColor: 'var(--os-accent)' },
     ],
   },
   {
-    id: 'paid',
-    title: '2 · Cobrar',
-    items: [
-      { href: '/admin/proposals', icon: 'proposals', label: 'Propuestas', badgeKey: 'proposals', badgeBg: 'rgba(232,165,22,.16)', badgeColor: 'var(--os-warn)' },
-      { href: '/admin/invoices',  icon: 'invoices', label: 'Facturas', badgeKey: 'invoices', badgeBg: 'rgba(220,38,38,.12)', badgeColor: 'var(--os-bad)' },
-      { href: '/admin/payments',  icon: 'payments', label: 'Pagos' },
-    ],
-  },
-  {
-    id: 'coaching',
-    title: '3 · Entrenar',
-    items: [
-      { href: '/admin/coaching',   icon: 'training', label: 'Mis clientes' },
-      { href: '/admin/onboarding', icon: 'forms', label: 'Onboarding' },
-      { href: '/admin/portal',     icon: 'clients', label: 'Portal clientes' },
-    ],
-  },
-  {
     id: 'growth',
-    title: '4 · Crecer',
+    title: '2 · Atraer',
     items: [
       { href: '/admin/links',       icon: 'funnels', label: 'Link en bio' },
       { href: '/admin/events',      icon: 'events', label: 'Masterclass y eventos' },
@@ -79,12 +62,7 @@ const NAV_GROUPS: NavGroup[] = [
     id: 'settings',
     title: 'Ajustes',
     items: [
-      { href: '/admin/offers',             icon: 'offers', label: 'Ofertas y precios' },
-      { href: '/admin/coaching/library',   icon: 'library', label: 'Ejercicios' },
-      { href: '/admin/coaching/templates', icon: 'programs', label: 'Plantillas' },
-      { href: '/admin/coaching/nutrition', icon: 'nutrition', label: 'Nutrición' },
-      { href: '/admin/coaching/brand',     icon: 'brand', label: 'Tu app' },
-      { href: '/admin/access',             icon: 'access', label: 'Accesos al panel' },
+      { href: '/admin/access', icon: 'access', label: 'Accesos al panel' },
     ],
   },
 ]
@@ -103,9 +81,9 @@ function isNavActive(href: string, path: string): boolean {
 
 const TAB_BAR: NavItem[] = [
   { href: '/admin',          icon: 'dashboard', label: 'Inicio' },
-  { href: '/admin/deals',    icon: 'leads', label: 'Leads' },
+  { href: '/admin/deals',    icon: 'leads', label: 'Pipeline' },
   { href: '/admin/bookings', icon: 'bookings', label: 'Llamadas' },
-  { href: '/admin/invoices', icon: 'money', label: 'Cobrar', badgeKey: 'invoices' },
+  { href: '/admin/events',   icon: 'events', label: 'Masterclass' },
 ]
 
 const PARTNER_TAB_BAR: NavItem[] = TAB_BAR
