@@ -1,6 +1,6 @@
 # Status: Jose Unstoppable (joseunstoppable.com)
 
-Last updated: 3 Nov 2026. Read this first in any new session.
+Last updated: 4 Nov 2026. Read this first in any new session.
 
 ## Where it stands
 - **Live production is the OLD site.** Vercel project `joseunstoppable` (team "Nevin Henriquez's projects")
@@ -26,6 +26,8 @@ the menu, and /portal, /app, /onboarding and /bienvenida redirect to /reserva (n
 that code only on Nevin's word.
 
 ## Recent changes
+- 4 Nov 2026: demo removed (Nevin). public/demo-dashboard.html deleted (old link goes to /), and
+  /admin/coaching (which showed sample clients in demo mode) redirects to /admin.
 - 3 Nov 2026: funnel only. /admin menu = Inicio, Llamadas (Pipeline, Llamadas reservadas, Contactos),
   Atraer (Link en bio, Masterclass, De dónde vienen), Ajustes (Accesos). "Acceso clientes" removed from
   the site header and footer. Client areas redirect to /reserva.
