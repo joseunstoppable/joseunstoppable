@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/' },
 }
 
-export const viewport: Viewport = { themeColor: '#100C0A' }
+export const viewport: Viewport = { themeColor: '#FFFFFF' }
 
 // Photos, videos and results live in lib/home-content.ts. On the live site an
 // empty slot stays hidden; on previews it shows as a marked placeholder so
@@ -24,6 +24,7 @@ const photoTestimonials = PHOTO_TESTIMONIALS.filter(t => t.before && t.after).sl
 const videoTestimonials = VIDEO_TESTIMONIALS.filter(t => t.video).slice(0, 6)
 const photoSlots = photoTestimonials.length || IS_LIVE ? 0 : 3
 const videoSlots = videoTestimonials.length || IS_LIVE ? 0 : 4
+const hasJoseBeforeAfter = !!(JOSE_BEFORE_AFTER.before && JOSE_BEFORE_AFTER.after)
 const WA_DISPLAY = '+' + WHATSAPP.replace(/^(\d{2})(\d{3})(\d{2})(\d{2})(\d{2})$/, '$1 $2 $3 $4 $5')
 const WA_CASE = waLink(WA_BOOK.es)
 
@@ -42,12 +43,12 @@ function WaButton({ children = 'Escríbeme y vemos tu caso', small = false }: { 
 }
 
 function Chip({ children }: { children: React.ReactNode }) {
-  return <span className="g-chip"><span aria-hidden="true">+</span>{children}</span>
+  return <span className="g-chip">{children}</span>
 }
 
 export default function Home() {
   return (
-    <div className="home gold">
+    <div className="home lp">
       {/* Sticky bar: the WhatsApp button stays in view all the way down */}
       <header className="g-top">
         <div className="g-wrap g-top-in">
@@ -95,8 +96,8 @@ export default function Home() {
               {Array.from({ length: photoSlots }, (_, i) => (
                 <figure key={i} className="g-card g-tcard g-slot">
                   <div className="g-ba">
-                    <div className="g-ph"><span className="g-lbl">Antes</span></div>
-                    <div className="g-ph"><span className="g-lbl now">Después</span></div>
+                    <div className="g-ph"><span className="g-slot-txt">Foto antes</span><span className="g-lbl">Antes</span></div>
+                    <div className="g-ph"><span className="g-slot-txt">Foto después</span><span className="g-lbl now">Después</span></div>
                   </div>
                   <figcaption><b>Foto de testimonio {i + 1}</b><span>Hueco vacío</span></figcaption>
                 </figure>
@@ -138,10 +139,15 @@ export default function Home() {
       <section className="g-sec g-story" id="mi-historia">
         <div className="g-wrap g-story-in">
           <div className="g-story-media">
-            {JOSE_BEFORE_AFTER.before && JOSE_BEFORE_AFTER.after ? (
+            {hasJoseBeforeAfter ? (
               <div className="g-ba">
                 <div className="g-ph tall"><Image src={JOSE_BEFORE_AFTER.before} alt={`${OWNER.name} antes`} fill sizes="(max-width: 640px) 45vw, 240px" /><span className="g-lbl">Antes</span></div>
                 <div className="g-ph tall"><Image src={JOSE_BEFORE_AFTER.after} alt={`${OWNER.name} hoy`} fill sizes="(max-width: 640px) 45vw, 240px" /><span className="g-lbl now">Hoy</span></div>
+              </div>
+            ) : !IS_LIVE ? (
+              <div className="g-ba g-slot">
+                <div className="g-ph tall"><span className="g-slot-txt">Tu foto de antes</span><span className="g-lbl">Antes</span></div>
+                <div className="g-ph tall"><span className="g-slot-txt">Tu foto de ahora</span><span className="g-lbl now">Hoy</span></div>
               </div>
             ) : INTRO_VIDEO ? (
               <VideoFrame src={INTRO_VIDEO} label="Ver vídeo: quién soy" className="v">
