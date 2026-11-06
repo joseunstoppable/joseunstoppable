@@ -7,9 +7,6 @@
 // top of the page and again in the closing section.
 export const INTRO_VIDEO = ''
 
-// Last day of the free October calls. The notice hides itself after this date.
-export const FREE_CALLS_UNTIL = '2026-10-31'
-
 // Jose's own before and after, shown in "Mi historia".
 export const JOSE_BEFORE_AFTER = { before: '', after: '' }
 
